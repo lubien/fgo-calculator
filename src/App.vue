@@ -4,7 +4,10 @@
       <div class="app-row" style="width: unset; padding: 0 15px">
         <div class="app-col" style="position: relative">
           <div class="advantage">
-            <img v-show="hasClassAdvantage" :src="require('@/assets/relations/advantage.png')" >
+            <img
+              v-show="hasClassAdvantage"
+              :src="require('@/assets/relations/advantage.png')"
+            />
           </div>
 
           <select
@@ -30,8 +33,14 @@
 
         <div class="app-col" style="position: relative">
           <div class="advantage">
-            <img v-show="hasAttributeAdvantage" :src="require('@/assets/relations/advantage.png')" >
-            <img v-show="hasAttributeDisadvantage" :src="require('@/assets/relations/disavantage.png')" >
+            <img
+              v-show="hasAttributeAdvantage"
+              :src="require('@/assets/relations/advantage.png')"
+            />
+            <img
+              v-show="hasAttributeDisadvantage"
+              :src="require('@/assets/relations/disavantage.png')"
+            />
           </div>
 
           <select
@@ -50,7 +59,10 @@
 
       <div v-for="(card, i) in cards" :key="i" class="app-row">
         <div class="app-col app-col-2 app-col-result">
-          <div v-if="calculations[i].damage.average" style="font-weight: bolder">
+          <div
+            v-if="calculations[i].damage.average"
+            style="font-weight: bolder"
+          >
             <AnimatedNumber :number="calculations[i].damage.average" />
           </div>
           <div
@@ -63,7 +75,11 @@
         </div>
 
         <template>
-          <div v-if="card.key !== 'np'" class="app-col" style="flex-direction: column; margin-top: -10px">
+          <div
+            v-if="card.key !== 'np'"
+            class="app-col"
+            style="flex-direction: column; margin-top: -10px"
+          >
             <span>Critical?</span>
 
             <label class="switch switch-critical">
@@ -116,7 +132,10 @@
 
       <div class="app-row">
         <div class="app-col app-col-2 app-col-result">
-          <div v-if="calculations[3].damage.average" style="font-weight: bolder">
+          <div
+            v-if="calculations[3].damage.average"
+            style="font-weight: bolder"
+          >
             <AnimatedNumber :number="calculations[3].damage.average" />
           </div>
           <div
@@ -138,7 +157,10 @@
 
         <div class="app-col app-col-2 app-col-total">
           <div class="app-col app-col-2 app-col-result">
-            <div v-if="totalCalculation.damage.average" style="font-weight: bolder">
+            <div
+              v-if="totalCalculation.damage.average"
+              style="font-weight: bolder"
+            >
               <AnimatedNumber :number="totalCalculation.damage.average" />
             </div>
             <div
@@ -158,7 +180,12 @@
     <template>
       <div v-if="selectingServant" class="app-panel">
         <div class="app-row" style="max-height: 64px">
-          <input v-model="query" type="text" class="search-input" placeholder="Search by name">
+          <input
+            v-model="query"
+            type="text"
+            class="search-input"
+            placeholder="Search by name"
+          />
         </div>
 
         <div class="app-row">
@@ -186,7 +213,7 @@
             @click="selectingServant = true"
           >
             {{ servant.name }}
-            
+
             <div class="text-muted">
               Change Here
             </div>
@@ -225,7 +252,7 @@
 
             <div class="app-col app-col-square" style="text-align: center">
               <span v-if="!servant.hasUpgradeNp">No NP interludes</span>
-              
+
               <template v-else>
                 <label class="switch switch-interlude">
                   <input type="checkbox" v-model="interlude" />
@@ -236,7 +263,10 @@
           </template>
 
           <template v-else>
-            <div class="app-col app-col-square buff-col" style="text-align: center">
+            <div
+              class="app-col app-col-square buff-col"
+              style="text-align: center"
+            >
               Custom NP Value
             </div>
 
@@ -390,7 +420,7 @@
 
 <script>
 import { Money } from "v-money";
-import AnimatedNumber from '@/components/AnimatedNumber.vue'
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import servants from "@/assets/servants.json";
 import { calculateDamage, classTable, attributeTable } from "./damage";
 
@@ -525,9 +555,9 @@ export default {
         };
       });
 
-      const npValue = this.npLevel === "-" && this.npValue
-      const useUpgradedNp = this.servant.hasUpgradeNp && this.interlude
-      const npLevel = this.npLevel
+      const npValue = this.npLevel === "-" && this.npValue;
+      const useUpgradedNp = this.servant.hasUpgradeNp && this.interlude;
+      const npLevel = this.npLevel;
 
       const input = {
         quickMod: this.quickMod,
@@ -569,16 +599,16 @@ export default {
       };
     },
 
-    hasClassAdvantage () {
-      return classTable[this.servant.className][this.enemyClassName] > 1
+    hasClassAdvantage() {
+      return classTable[this.servant.className][this.enemyClassName] > 1;
     },
 
-    hasAttributeAdvantage () {
-      return attributeTable[this.servant.attribute][this.enemyAttribute] > 1
+    hasAttributeAdvantage() {
+      return attributeTable[this.servant.attribute][this.enemyAttribute] > 1;
     },
 
-    hasAttributeDisadvantage () {
-      return attributeTable[this.enemyAttribute][this.servant.attribute] > 1
+    hasAttributeDisadvantage() {
+      return attributeTable[this.enemyAttribute][this.servant.attribute] > 1;
     }
   },
 
@@ -591,7 +621,7 @@ export default {
       this.enemyAttribute = servant.attribute;
       this.selectingServant = false;
       Object.assign(this, defaultBuffs());
-      this.npValue = servant.npValues[0]
+      this.npValue = servant.npValues[0];
       this.query = "";
     },
 
@@ -670,7 +700,7 @@ body {
 }
 
 .app-panel .app-row {
-  border-top: 1px solid rgba(0, 0, 0, .2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .app-col {
@@ -699,7 +729,7 @@ body {
   text-align: center;
   font-size: 0.8em;
   margin: 2px 0;
-  color: rgb(255, 255, 255, .5)
+  color: rgb(255, 255, 255, 0.5);
 }
 
 .buff-img {
@@ -772,12 +802,12 @@ body {
 }
 
 .search-results li {
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 15px 0;
 }
 
 .app-panel .text-muted {
-  color: rgba(255, 255, 255, .5)
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .search-result-button {
@@ -830,7 +860,8 @@ body {
 }
 
 @keyframes MoveUpDown {
-  0%, 100% {
+  0%,
+  100% {
     bottom: 0;
   }
   50% {
@@ -839,7 +870,8 @@ body {
 }
 
 @keyframes MoveDownUp {
-  0%, 100% {
+  0%,
+  100% {
     bottom: 10px;
   }
   50% {
@@ -861,7 +893,7 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border: 0;
   color: white;
-  text-align-last:center
+  text-align-last: center;
 }
 
 .app-panel .np-input option {
@@ -870,7 +902,7 @@ body {
 }
 
 .app-col-total {
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: none;
   border-right: none;
 }
