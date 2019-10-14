@@ -1,4 +1,8 @@
-# FGO Damage Calculator
+<div>
+  <h1>
+    <a href="https://fgo-calculator.surge.sh"><img src="https://user-images.githubusercontent.com/9121359/66725921-7024f800-ee0c-11e9-9d4c-9a3f9db40b32.png" alt="App Icon" align="left" height="48"/></a> FGO Damage Calculator
+  </h1>
+</div>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/9121359/66725613-23d8b880-ee0a-11e9-82a4-44465ac173ee.png">
