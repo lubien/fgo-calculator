@@ -273,7 +273,7 @@
               alt="Critical Modifier"
               class="buff-img"
             />
-            <div class="buff-label">Critical Strenght</div>
+            <div class="buff-label">Critical Strength</div>
           </div>
           <div class="app-col app-col-square">
             <Money
@@ -307,7 +307,7 @@
               alt="NP Modifier"
               class="buff-img"
             />
-            <div class="buff-label">NP Strenght</div>
+            <div class="buff-label">NP Strength</div>
           </div>
           <div class="app-col app-col-square">
             <Money
