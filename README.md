@@ -1,4 +1,8 @@
-# calculator
+# FGO Damage Calculator
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/9121359/66725613-23d8b880-ee0a-11e9-82a4-44465ac173ee.png">
+</p>
 
 ## Project setup
 ```
