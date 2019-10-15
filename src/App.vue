@@ -8,6 +8,10 @@
               v-show="hasClassAdvantage"
               :src="require('@/assets/relations/advantage.png')"
             />
+            <img
+              v-show="!hasClassAdvantage && hasClassDisadvantage"
+              :src="require('@/assets/relations/disavantage.png')"
+            />
           </div>
 
           <select
@@ -601,6 +605,10 @@ export default {
 
     hasClassAdvantage() {
       return classTable[this.servant.className][this.enemyClassName] > 1;
+    },
+
+    hasClassDisadvantage() {
+      return classTable[this.enemyClassName][this.servant.className] > 1;
     },
 
     hasAttributeAdvantage() {
