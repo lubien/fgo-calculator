@@ -241,7 +241,7 @@ export const classTable = {
     beastIi: 1,
     beastIii: 1
   },
-  "moon cancer": {
+  moonCancer: {
     shielder: 1,
     saber: 1,
     archer: 1,
