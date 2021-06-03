@@ -662,6 +662,10 @@ function sum(xs) {
 }
 </script>
 
+<style lang="scss">
+@import "bootstrap";
+</style>
+
 <style>
 html,
 body {
